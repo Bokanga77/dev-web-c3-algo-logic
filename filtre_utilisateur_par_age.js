@@ -12,3 +12,9 @@ const personnes = [
   /**
    * Ex : Utilisateurs de 25 ans et plus : [{ nom: 'Alice', age: 25 }, { nom: 'Bob', age: 30 }]
    */
+  function filtrerParAgeSuperieurA(personnes, age) {
+    return personnes.filter(personne => personne.age > age);
+}
+
+const utilisateursFiltres = filtrerParAgeSuperieurA(personnes, 25);
+console.log(utilisateursFiltres); 
