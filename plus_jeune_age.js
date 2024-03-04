@@ -13,3 +13,12 @@ const personnes = [
          Plus âgé : { nom: 'Bob', age: 30 }
 
    */
+         function trouverPersonnesExtremes(personnes) {
+          const plusJeune = personnes.reduce((min, personne) => personne.age < min.age ? personne : min, personnes[0]);
+          const plusAge = personnes.reduce((max, personne) => personne.age > max.age ? personne : max, personnes[0]);
+          return { plusJeune, plusAge };
+      }
+      
+      const { plusJeune, plusAge } = trouverPersonnesExtremes(personnes);
+      console.log("Plus jeune :", plusJeune); 
+      console.log("Plus âgé :", plusAge);
