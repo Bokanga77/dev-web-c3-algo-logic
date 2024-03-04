@@ -1,5 +1,5 @@
 // Fusionner deux tableaux d'objets
-// Écrire une fonction qui fusionne les deux tableaux en éliminant les doublons (s'il y en a) et en conservant l'ordre.
+// Écrire (s'il y en a) et en conservant l'ordre.
 // ________________________________
 
 const tableau1 = [
@@ -14,3 +14,10 @@ const tableau2 = [
 /**
  * Ex: [{ id: 1, nom: 'Alice' }, { id: 2, nom: 'Bob' }, { id: 3, nom: 'Charlie' }]
  */
+function fusionnerTableaux(tableau1, tableau2) {
+  return Array.from(new Set([...tableau1, ...tableau2].map(obj => obj.id))
+      .map(id => [...tableau1, ...tableau2].find(obj => obj.id === id));
+}
+
+const tableauFusionne = fusionnerTableaux(tableau1, tableau2);
+console.log(tableauFusionne);
